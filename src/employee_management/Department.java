@@ -1,12 +1,13 @@
 package employee_management;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Department {
     private String departmentName;
-    private Set<Employee> employees;
+    private List<Employee> employees = new ArrayList<>();
 
-    public Department(String departmentName, Set<Employee> employees) {
+    public Department(String departmentName, List<Employee> employees) {
         this.departmentName = departmentName;
         this.employees = employees;
     }
@@ -57,11 +58,11 @@ public class Department {
         this.departmentName = departmentName;
     }
 
-    public Set<Employee> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(Set<Employee> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 }

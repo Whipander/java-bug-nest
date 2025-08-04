@@ -1,5 +1,6 @@
 package employee_management;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class Employee {
@@ -43,5 +44,17 @@ public abstract class Employee {
                 "employeeId=" + employeeId +
                 ", name='" + name + "'"
                 ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return employeeId == employee.employeeId && Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId, name);
     }
 }

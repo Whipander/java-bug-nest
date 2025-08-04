@@ -11,6 +11,12 @@ public class PartTimeEmployee extends Employee {
         this.hourlyRate = hourlyRate;
     }
 
+    public PartTimeEmployee(String name, double hoursWorked, double hourlyRate) {
+        super(name);
+        this.hoursWorked = hoursWorked;
+        this.hourlyRate = hourlyRate;
+    }
+
     public double getHoursWorked() {
         return hoursWorked;
     }
@@ -18,7 +24,7 @@ public class PartTimeEmployee extends Employee {
     public void setHoursWorked(double hoursWorked) {
         if (hoursWorked >= 0) {
             this.hoursWorked = hoursWorked;
-        }else {
+        } else {
             throw new IllegalArgumentException("Hours worked should be greater or equal to 0");
         }
 
@@ -31,8 +37,8 @@ public class PartTimeEmployee extends Employee {
     public void setHourlyRate(double hourlyRate) {
         if (hourlyRate > 0) {
             this.hourlyRate = hourlyRate;
-        }else{
-            throw new IllegalArgumentException("Hourly Rate is should be greater than 0");
+        } else {
+            throw new IllegalArgumentException("Hourly rate should be greater than 0");
         }
     }
 
