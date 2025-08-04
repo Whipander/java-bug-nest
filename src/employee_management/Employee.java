@@ -11,6 +11,8 @@ public abstract class Employee {
 
     public abstract double calculatePay();
 
+    public abstract double calculateTax();
+
     public int getEmployeeId() {
         return employeeId;
     }

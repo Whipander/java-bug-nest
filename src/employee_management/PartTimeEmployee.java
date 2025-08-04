@@ -45,5 +45,10 @@ public class PartTimeEmployee extends Employee {
     public double calculatePay() {
         return hoursWorked * hourlyRate;
     }
+
+    @Override
+    public double calculateTax() {
+        return calculatePay() * 0.15;
+    }
 }
 
