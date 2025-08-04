@@ -9,6 +9,8 @@ public abstract class Employee {
         this.name = name;
     }
 
+    public abstract double calculatePay();
+
     public int getEmployeeId() {
         return employeeId;
     }
@@ -25,5 +27,11 @@ public abstract class Employee {
         this.name = name;
     }
 
-    public abstract double calculatePay();
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
