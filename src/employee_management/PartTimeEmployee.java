@@ -16,7 +16,14 @@ public class PartTimeEmployee extends Employee {
     }
 
     public void setHoursWorked(double hoursWorked) {
-        this.hoursWorked = hoursWorked;
+        if (hoursWorked >= 0) {
+            this.hoursWorked = hoursWorked;
+        }else {
+            System.out.println("Hours worked is invalide: " + hoursWorked);
+            System.out.println("Hours worked will be set to: 0");
+            hoursWorked = 0;
+        }
+
     }
 
     public double getHourlyRate() {
@@ -24,7 +31,13 @@ public class PartTimeEmployee extends Employee {
     }
 
     public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+        if (hourlyRate > 0) {
+            this.hourlyRate = hourlyRate;
+        }else{
+            System.out.println("Hourly rate is invalide: " + hourlyRate);
+            System.out.println("Hourly rate will be set to: 20");
+            hourlyRate = 20;
+        }
     }
 
 

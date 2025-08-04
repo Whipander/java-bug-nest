@@ -1,15 +1,39 @@
 package employee_management;
 
-/**
- * TODO : a department is a collection of employees. It has a name and a set of employees in it.
- */
+import java.util.Set;
+
 public class Department {
-    /**
-     * TODO : Employees should never ever be duplicated in a single department.
-     * Please check if it already exists in the department before inserting if need be. Duplicate
-     * here means : their employee id and name are the same.
-     *
-     * TODO : for our HR officer, give a function to show all details about employees, including
-     * their pay.
-     */
+    private String departmentName;
+    private Set<Employee> employees;
+
+    public Department(String departmentName, Set<Employee> employees) {
+        this.departmentName = departmentName;
+        this.employees = employees;
+    }
+
+    public void showAllEmployeesInformation() {
+        for (Employee employee : employees) {
+            if (employee instanceof FullTimeEmployee) {
+                System.out.println(employee + ", monthly salary: " + ((FullTimeEmployee) employee).getMonthlySalary());
+            } else {
+                System.out.println(employee + ", pay: " + employee.calculatePay());
+            }
+        }
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
+    }
 }

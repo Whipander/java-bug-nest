@@ -13,6 +13,11 @@ public class FullTimeEmployee extends Employee {
     }
 
     public void setMonthlySalary(double monthlySalary) {
+        if (monthlySalary < 0) {
+            System.out.println("Monthly salary is invalide: " + monthlySalary);
+            System.out.println("Monthly salary will be set to: 1000");
+            monthlySalary = 1000;
+        }
         this.monthlySalary = monthlySalary;
     }
 

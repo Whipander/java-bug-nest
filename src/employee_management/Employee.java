@@ -29,9 +29,9 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Employee: " +
                 "employeeId=" + employeeId +
-                ", name='" + name + '\'' +
-                '}';
+                ", name='" + name + "'"
+                ;
     }
 }
