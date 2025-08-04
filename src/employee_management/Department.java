@@ -11,12 +11,32 @@ public class Department {
         this.employees = employees;
     }
 
-    public void showAllEmployeesInformation() {
+    public void showAllEmployeesPay() {
         for (Employee employee : employees) {
             if (employee instanceof FullTimeEmployee) {
-                System.out.println(employee + ", monthly salary: " + ((FullTimeEmployee) employee).getMonthlySalary());
+                System.out.println(employee +
+                        ", monthly salary: " + employee.calculatePay()
+                );
             } else {
-                System.out.println(employee + ", pay: " + employee.calculatePay());
+                System.out.println(employee +
+                        ", pay: " + employee.calculatePay()
+                );
+            }
+        }
+    }
+
+    public void showAllEmployeesInformations() {
+        for (Employee employee : employees) {
+            if (employee instanceof FullTimeEmployee) {
+                System.out.println(employee +
+                        ", monthly salary: " + employee.calculatePay()
+                );
+            } else if (employee instanceof PartTimeEmployee) {
+                System.out.println(employee +
+                        ", hourly rate: " + ((PartTimeEmployee) employee).getHourlyRate() +
+                        ", hours worked: " + ((PartTimeEmployee) employee).getHoursWorked() +
+                        ", pay: " + employee.calculatePay()
+                );
             }
         }
     }

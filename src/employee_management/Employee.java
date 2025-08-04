@@ -1,11 +1,19 @@
 package employee_management;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public abstract class Employee {
+    private static final AtomicInteger counter = new AtomicInteger(0);
     private int employeeId;
     private String name;
 
     public Employee(int employeeId, String name) {
         this.employeeId = employeeId;
+        this.name = name;
+    }
+
+    public Employee(String name) {
+        this.employeeId = counter.incrementAndGet();
         this.name = name;
     }
 
