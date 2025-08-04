@@ -41,6 +41,14 @@ public class Department {
         }
     }
 
+    public void addEmployee(Employee employee) {
+        if (this.employees.contains(employee)) {
+            System.out.println("Employee " + employee.getName() + " already exists");
+        }else{
+            this.employees.add(employee);
+        }
+    }
+
     public String getDepartmentName() {
         return departmentName;
     }

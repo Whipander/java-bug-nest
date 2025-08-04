@@ -19,9 +19,7 @@ public class PartTimeEmployee extends Employee {
         if (hoursWorked >= 0) {
             this.hoursWorked = hoursWorked;
         }else {
-            System.out.println("Hours worked is invalide: " + hoursWorked);
-            System.out.println("Hours worked will be set to: 0");
-            hoursWorked = 0;
+            throw new IllegalArgumentException("Hours worked should be greater or equal to 0");
         }
 
     }
@@ -34,9 +32,7 @@ public class PartTimeEmployee extends Employee {
         if (hourlyRate > 0) {
             this.hourlyRate = hourlyRate;
         }else{
-            System.out.println("Hourly rate is invalide: " + hourlyRate);
-            System.out.println("Hourly rate will be set to: 20");
-            hourlyRate = 20;
+            throw new IllegalArgumentException("Hourly Rate is should be greater than 0");
         }
     }
 
